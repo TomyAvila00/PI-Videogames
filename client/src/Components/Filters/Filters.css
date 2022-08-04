@@ -1,0 +1,8 @@
+.containerFilters{
+    display: flex;
+    justify-content: space-around;
+}
+
+.select, .selectName, .selectRating, .selectCreated{
+    margin: 1%;
+}

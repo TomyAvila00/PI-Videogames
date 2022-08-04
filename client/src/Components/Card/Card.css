@@ -1,0 +1,21 @@
+.container{
+    background-color: black;
+    border-radius: 15px;
+    height: 39vh;
+    width: 25vw;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+
+#imagen{
+    width: 25vw;
+    height: 33vh;
+}
+
+.link{
+    color: goldenrod;
+    text-decoration: none;
+    font-family: 'SuperNintendo';
+    font-size: 150%;
+}

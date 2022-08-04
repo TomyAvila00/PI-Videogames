@@ -1,0 +1,58 @@
+.createName, .createdescription, .createRelease, .createRating, .createPlatforms, .createGenre{
+    margin: 5%;
+}
+
+.createPlatforms{
+    text-align: left;
+    padding-left: 25%;
+}
+
+.formulario{
+    height: 83vh;
+    background-color: black;
+    margin-top: 2%;
+    margin-left: 40%;
+    margin-right: 40%;
+    padding: 0.5%;
+    box-shadow: 0 16px 16px 0 black;
+}
+
+.detalles{
+    text-decoration: none;
+    font-family: 'superNintendo';
+    font-size: 25px;
+}
+
+.lbl{
+    color: gray;
+    font-family: 'superNintendo';
+    font-size: 20px;
+}
+
+.inputPlatform{
+    margin-right: 2%;
+}
+
+.errorCreate{
+    color: red;
+}
+
+.choosedGenre{
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-bottom: 2%;
+    background-color: whitesmoke;
+    font-family: 'superNintendo';
+    font-size: 130%;
+}
+
+.buttonx{
+    margin-left: 1%;
+    height: 1%;
+    width: 6%;
+}
+
+.genresCreated{
+    justify-content: center;
+    display: flex;
+}

@@ -1,0 +1,53 @@
+*{
+    margin: 0%;
+}
+.detail{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-right: 9vh;
+    padding-left: 9vh;
+    font-family: 'superNintendo';
+    font-size: 3vh;
+}
+
+.completeDescription{
+    margin-top: 9%;
+    margin-bottom: 9%;
+    text-align: left;
+}
+
+.title{
+    color: gold;
+    text-shadow: 2px 2px black;
+}
+
+#detailImage{
+    margin-top: 17vh;
+    height: 45vh;
+    width: 45vw;
+}
+
+.imagen{
+    height: 100%;
+    width: 100%;
+    border-radius: 8%;
+    box-shadow: 0 16px 16px 0 black;
+}
+
+u{
+    color: goldenrod;
+    text-decoration: none;
+}
+
+.timmyDetail{
+    margin-top: 10%;
+    border-radius: 5%;
+    box-shadow: 0 5px 5px 0 black;
+}
+
+.loadingDetail{
+    font-family: 'superNintendo';
+    font-size: 250%;
+    text-shadow: 2px 2px black;
+    color: white;
+}
