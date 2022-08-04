@@ -1,13 +1,9 @@
 import Axios from "axios";
 
-const URL = "http://localhost:3001"
-
-
-
 
 export const getAllGames = () => {
     return async (dispatch) => {
-        let res = await Axios.get(`${URL}/videogames`)
+        let res = await Axios.get('/videogames')
         return dispatch({
             type: "GET_ALL_GAMES",
             payload: res.data
@@ -43,7 +39,7 @@ export function filterCreated (payload) {
 export function searchGame(name) {
     return async function(dispatch){
         try {
-            let res = await Axios.get(`${URL}/videogames?name=${name}` );
+            let res = await Axios.get(`/videogames?name=${name}` );
             return dispatch({
                 type: "SEARCH_GAME",
                 payload: res.data
@@ -71,7 +67,7 @@ export function filterByGenre(payload){
 
 export const getAllGenres = () => {
     return async(dispatch) => {
-        const res = await Axios.get(`${URL}/genres`);
+        const res = await Axios.get('/genres');
         return dispatch({
             type: "GET_ALL_GENRES",
             payload: res.data
@@ -81,7 +77,7 @@ export const getAllGenres = () => {
 
 export const getGameById = (idVideogame) => {
     return async (dispatch) => {
-        let res = await Axios.get(`${URL}/videogame/${idVideogame}`)
+        let res = await Axios.get(`/videogame/${idVideogame}`)
         return dispatch ({
             type: "GET_GAME_BY_ID",
             payload: res.data
@@ -92,7 +88,7 @@ export const getGameById = (idVideogame) => {
 export function getDetail(id) {
     return async function (dispatch){
         try {
-            const res = await Axios.get(`${URL}/videogame/${id}`)
+            const res = await Axios.get(`/videogame/${id}`)
             return dispatch({
                 type: "GET_DETAILS",
                 payload: res.data
@@ -105,7 +101,7 @@ export function getDetail(id) {
 
 export const createVideogame = (payload) => {
    return async function (dispatch){
-    let res = await Axios.post(`${URL}/videogame`, payload)
+    let res = await Axios.post('/videogame', payload)
     console.log(res)
     return res;
    }
