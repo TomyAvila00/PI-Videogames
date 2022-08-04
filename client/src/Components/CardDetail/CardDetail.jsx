@@ -15,6 +15,7 @@ export default function CardDetail(){
     }, [dispatch, idVideogame])
 
     const myGame = useSelector((state) => state.gameDetail);
+    console.log(myGame);
     
     return(
         <> 
