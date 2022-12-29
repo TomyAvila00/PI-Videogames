@@ -20,6 +20,7 @@ export default function SearchBar(){
         }else{
             dispatch(searchGame(name))
             setName('')
+            return alert('Searching...')
         }
     }
 

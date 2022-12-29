@@ -39,7 +39,7 @@ export default function CreateGame(){
         } else if(!input.platforms.length){
             errors.platforms = "Platforms are required!"
         } else if(!input.genres.length){
-            errors.genres = "Genres are required!"
+            errors.genres = "At least 2 genres are required!"
         }
         return errors;
     }
@@ -66,10 +66,16 @@ export default function CreateGame(){
     }
 
     function handleSelect(e){
-        setInput({
-            ...input,
-            genres: [...input.genres, e.target.value]
-        })
+        if(!input.genres.includes(e.target.value)){
+            setInput({
+                ...input,
+                genres: [...input.genres, e.target.value]
+            })
+            setErrors(validate({
+                ...input,
+                [e.target.name] : e.target.value
+            }))
+        } 
     }
 
     const handleChange = (e) => {
@@ -88,6 +94,15 @@ export default function CreateGame(){
             setInput({
                 ...input,
                 platforms: [...input.platforms, e.target.value]
+            })
+            setErrors(validate({
+                ...input,
+                platforms: [...input.platforms, e.target.value]
+            }))
+        } else {
+            setInput({
+                ...input,
+                platforms: input.platforms.filter(p => p !== e.target.value)
             })
         }
     }
@@ -314,7 +329,9 @@ export default function CreateGame(){
                             />Playstation</label><br />
                     {errors.platforms && (<p className="errorCreate">{errors.platforms}</p>)}
                 </div>
-                <div>
+                <div> 
+
+
                     <div className="createGenre">
                         <label><u className="detalles">GENRES: </u></label>
                         <select onChange={(e) => handleSelect(e)}>
@@ -324,13 +341,19 @@ export default function CreateGame(){
                             ))}
                         </select>
                     </div>
+
+
                     {input.genres.map((element, index) => (
                         <div key={index} className="genresCreated">
                             <p className="choosedGenre">{element}</p>
                             <button className="buttonx" type="button" onClick={() => handleDelete(element)}> X </button>
                         </div>
                     ))}
+
+                    
                     {errors.genres && (<p className="errorCreate">{errors.genres}</p>)}
+
+                    
                 </div>
                 <div className="containerSubmit">
                     <button className="button3" disabled={button} type="submit">Create videogame</button>

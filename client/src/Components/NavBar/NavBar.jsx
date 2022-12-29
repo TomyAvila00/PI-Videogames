@@ -12,12 +12,14 @@ export default function NavBar(props){
                 <SearchBar className="searchbar" />
             </div>
         )
+        
     } else if(window.location.href === 'http://localhost:3000/videogame'){
         return (
             <div className="containerNav">
                 <NavLink to={'/home'} className= 'link'><h2>Home</h2></NavLink>
             </div>
         )
+
     } else {
         return (
             <div className="containerNav">
@@ -25,5 +27,5 @@ export default function NavBar(props){
                 <NavLink to={"/videogame"} className="link"><h2>Create videogame</h2></NavLink>
             </div>
         )
-    }
-}
+    };
+};

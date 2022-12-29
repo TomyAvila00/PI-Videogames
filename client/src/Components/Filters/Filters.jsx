@@ -54,8 +54,8 @@ export function Filters(props){
             <div className="selectRating">
                 <select onChange={e => handleFilterRating(e)}>
                     <option hidden>RATING</option>
-                    <option value="top">Largest rating</option>
-                    <option value="down">Lowest rating</option>
+                    <option value="top">Best rating</option>
+                    <option value="down">Worst rating</option>
                 </select>
             </div>
             <div className="selectCreated">

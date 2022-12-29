@@ -30,7 +30,7 @@
 .imagen{
     height: 100%;
     width: 100%;
-    border-radius: 8%;
+    border-radius: 8px;
     box-shadow: 0 16px 16px 0 black;
 }
 

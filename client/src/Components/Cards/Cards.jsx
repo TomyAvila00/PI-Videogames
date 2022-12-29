@@ -19,23 +19,36 @@ function Cards(props){
         // eslint-disable-next-line
     }, [])
 
-    if(props.page < 1) {
-        props.setPage(1)
-        return
+    // if(props.page < 1) {
+    //     props.setPage(1)
+    //     return
+    // }
+
+    // if(props.page > 7){
+    //     props.setPage(7)
+    //     return
+    // }
+
+    function prevClick(e){
+        console.log(e.target.id)
+        if(props.page > 1){
+            return props.setPage(props.page - 1)
+        }
     }
 
-    if(props.page > 10){
-        props.setPage(10)
-        return
+    function nextClick(){
+        if(props.page < 7){
+            return props.setPage(props.page + 1)
+        }
     }
 
 
     return(
         <div className="containerCards">
             <div className="paginado">
-                    <button onClick={() => props.setPage(props.page - 1) }><img src={flechaIzquierda} alt='Flecha izquierda logo'></img></button>
+                    <button id={props.page} onClick={prevClick}><img src={flechaIzquierda} alt='Flecha izquierda logo'></img></button>
                     <h3 className="number">Page: {props.page}</h3>
-                    <button onClick={() => props.setPage(props.page + 1)}><img src={flechaDerecha} alt='Flecha derecha logo'></img></button>
+                    <button id={props.page} onClick={nextClick}><img src={flechaDerecha} alt='Flecha derecha logo'></img></button>
             </div>
             <div className="cards">
                 {game[0] ? game.map((v, index) => 
@@ -55,9 +68,9 @@ function Cards(props){
                 )}
             </div>
             <div className="paginado" id="paginadoBot">
-                    <button onClick={() => props.setPage(props.page -1)}><img src={flechaIzquierda} alt='Flecha izquierda logo'></img></button>
+                    <button id={props.page} onClick={prevClick}><img src={flechaIzquierda} alt='Flecha izquierda logo'></img></button>
                     <h3 className="number">Page: {props.page}</h3>
-                    <button onClick={() => props.setPage(props.page + 1)}><img src={flechaDerecha} alt='Flecha derecha logo'></img></button>
+                    <button id={props.page} onClick={nextClick}><img src={flechaDerecha} alt='Flecha derecha logo'></img></button>
             </div>
         </div>
     )
